@@ -31,6 +31,8 @@ jobs:
       - name: Build documentation site
         run: npm run build
         working-directory: docs
+        env:
+          DOCUSAURUS_NO_PROGRESS: true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
