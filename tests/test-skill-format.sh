@@ -39,8 +39,9 @@ section() {
 
 # --- Suite header -------------------------------------------------------------
 echo ""
+FRAMEWORK_VERSION=$(grep "^version:" ../c4designer/SKILL.md | head -1 | cut -d' ' -f2- | tr -d '"')
 echo -e "${BOLD}╔══════════════════════════════════════════════════╗${RESET}"
-echo -e "${BOLD}║         c4-skills Test Suite v1.0                ║${RESET}"
+echo -e "${BOLD}║         c4-skills Test Suite v${FRAMEWORK_VERSION}                ║${RESET}"
 echo -e "${BOLD}╚══════════════════════════════════════════════════╝${RESET}"
 echo -e "  ${DIM}Running all structural, compliance, and domain checks...${RESET}"
 echo ""
@@ -106,7 +107,12 @@ for SKILL_FILE in ../*/SKILL.md; do
         info "Running C4 syntax validation on examples..."
         for example in "$SKILL_DIR"/examples/*.md; do
             if [ -f "$example" ]; then
-                ./validate-c4-diagram.sh "$example"
+                base=$(basename "$example")
+                if OUTPUT=$(./validate-c4-diagram.sh "$example" 2>&1); then
+                    pass "[1.6] Example '$base' is a valid C4 diagram"
+                else
+                    fail "[1.6] Example '$base' failed C4 validation:\n$OUTPUT"
+                fi
             fi
         done
     fi
@@ -117,7 +123,12 @@ for SKILL_FILE in ../*/SKILL.md; do
         info "Running ADR completeness validation on examples..."
         for example in "$SKILL_DIR"/examples/*.md; do
             if [ -f "$example" ]; then
-                ./validate-adr.sh "$example"
+                base=$(basename "$example")
+                if OUTPUT=$(./validate-adr.sh "$example" 2>&1); then
+                    pass "[1.7] Example '$base' is a valid ADR"
+                else
+                    fail "[1.7] Example '$base' failed ADR validation:\n$OUTPUT"
+                fi
             fi
         done
     fi
@@ -133,7 +144,12 @@ if [ -d "example-codebase/diagrams" ]; then
     info "Validating golden C4 diagrams in example-codebase/diagrams..."
     for example in example-codebase/diagrams/*.md; do
         if [ -f "$example" ]; then
-            ./validate-c4-diagram.sh "$example"
+            base=$(basename "$example")
+            if OUTPUT=$(./validate-c4-diagram.sh "$example" 2>&1); then
+                pass "[2.1] Golden diagram '$base' is valid"
+            else
+                fail "[2.1] Golden diagram '$base' failed validation:\n$OUTPUT"
+            fi
         fi
     done
 else
@@ -155,6 +171,14 @@ if [ -d "$BEHAVIORAL_DIR" ]; then
         if [ -d "$fixture_dir" ]; then
             FIXTURE_COUNT=$((FIXTURE_COUNT + 1))
             fixture_name=$(basename "$fixture_dir")
+            # Completeness check: must have a prompt.md with '## Acceptance Criteria'
+            prompt="$fixture_dir/prompt.md"
+            if [ ! -f "$prompt" ] || ! grep -q "^## Acceptance Criteria" "$prompt"; then
+                fail "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': missing prompt.md or '## Acceptance Criteria' section"
+            else
+                pass "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': prompt completeness"
+            fi
+            
             expected="$fixture_dir/expected.md"
             if [ -f "$expected" ]; then
                 # Route to the right validator using skill.txt in the fixture dir
@@ -167,9 +191,21 @@ if [ -d "$BEHAVIORAL_DIR" ]; then
                 else
                     VALIDATOR="./validate-c4-diagram.sh"
                 fi
-                $VALIDATOR "$expected" 2>/dev/null \
-                    && pass "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': expected output is valid" \
-                    || fail "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': expected output failed validation"
+                
+                # Check for negative tests
+                if [[ "$fixture_name" == negative-* ]]; then
+                    if OUTPUT=$($VALIDATOR "$expected" 2>&1); then
+                        fail "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': expected output should have FAILED validation but passed."
+                    else
+                        pass "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': expected output correctly failed validation."
+                    fi
+                else
+                    if OUTPUT=$($VALIDATOR "$expected" 2>&1); then
+                        pass "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': expected output is valid"
+                    else
+                        fail "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': expected output failed validation:\n$OUTPUT"
+                    fi
+                fi
                 FIXTURE_PASS=$((FIXTURE_PASS + 1))
             else
                 fail "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': missing expected.md"

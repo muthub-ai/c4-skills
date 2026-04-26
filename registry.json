@@ -1,0 +1,37 @@
+{
+  "name": "c4-skills",
+  "version": "1.2.0",
+  "description": "A universal AI agent skill package for software architecture.",
+  "skills": [
+    {
+      "id": "c4designer",
+      "name": "c4-model",
+      "version": "1.2.0",
+      "description": "Interactively co-build a software architecture using Simon Brown's C4 model.",
+      "requires": [],
+      "compatible_agents": ["copilot", "claude-code", "cursor", "devin", "windsurf"],
+      "path": "c4designer/SKILL.md",
+      "modes": [
+        "design",
+        "document-code",
+        "document-prose",
+        "review",
+        "update"
+      ]
+    },
+    {
+      "id": "adr-scribe",
+      "name": "adr-scribe",
+      "version": "1.2.0",
+      "description": "Interactively draft, retro-document, and review Architecture Decision Records (ADRs).",
+      "requires": ["c4-model >= 1.0.0"],
+      "compatible_agents": ["copilot", "claude-code", "cursor", "devin", "windsurf"],
+      "path": "adr-scribe/SKILL.md",
+      "modes": [
+        "interview",
+        "retro-document",
+        "review"
+      ]
+    }
+  ]
+}

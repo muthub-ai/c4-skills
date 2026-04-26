@@ -15,7 +15,6 @@ if [ ! -f "$FILE" ]; then
     exit 1
 fi
 
-echo "Validating ADR syntax in: $FILE"
 
 # Check for Status
 if ! grep -q '\* Status:' "$FILE"; then
@@ -47,5 +46,4 @@ if ! grep -Eq '^### Negative Consequences' "$FILE"; then
     exit 1
 fi
 
-echo "✅ $FILE is a valid Architecture Decision Record"
 exit 0

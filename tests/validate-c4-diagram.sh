@@ -15,7 +15,6 @@ if [ ! -f "$FILE" ]; then
     exit 1
 fi
 
-echo "Validating C4 Diagram syntax in: $FILE"
 
 # Check for mermaid code block
 if ! grep -q '```mermaid' "$FILE"; then
@@ -29,8 +28,8 @@ if ! grep -Eq 'C4Context|C4Container|C4Component|C4Dynamic|C4Deployment' "$FILE"
     exit 1
 fi
 
-# Check for a title
-if ! grep -q 'title ' "$FILE"; then
+# Check for a title inside the mermaid block
+if ! awk '/```mermaid/{flag=1; next} /```/{flag=0} flag' "$FILE" | grep -q 'title '; then
     echo "❌ Missing title declaration in diagram"
     exit 1
 fi
@@ -80,5 +79,4 @@ if grep -Eq 'C4Container|C4Component' "$FILE"; then
     done < "$FILE"
 fi
 
-echo "✅ $FILE is a valid C4 Markdown diagram"
 exit 0

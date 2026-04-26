@@ -4,6 +4,8 @@ set -e
 echo "🏗️ c4-skills Universal Installer"
 echo "--------------------------------"
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Target default directories for different agents
 COPILOT_DIR=".github/skills"
 DEVIN_DIR=".agents/skills"
@@ -19,17 +21,17 @@ TARGETS=()
 if [ -d ".github" ]; then
     echo "✅ GitHub Copilot environment detected (.github folder)"
     TARGETS+=("$COPILOT_DIR")
+else
+    # We'll install to .agents/skills by default as it's the emerging standard
+    echo "✅ Adding emerging standard directory (.agents/skills)"
+    TARGETS+=("$DEVIN_DIR")
 fi
-
-# We'll install to .agents/skills by default as it's the emerging standard
-echo "✅ Adding emerging standard directory (.agents/skills)"
-TARGETS+=("$DEVIN_DIR")
 
 for target in "${TARGETS[@]}"; do
     echo "Installing to $target..."
     mkdir -p "$target"
-    cp -r c4designer "$target/"
-    cp -r adr-scribe "$target/"
+    cp -r "$SCRIPT_DIR/c4designer" "$target/"
+    cp -r "$SCRIPT_DIR/adr-scribe" "$target/"
     echo "✅ Installed c4designer and adr-scribe into $target"
 done
 
