@@ -63,6 +63,19 @@ if grep -Eq 'C4Container|C4Component' "$FILE"; then
                 echo "❌ Found Rel statement missing protocol parameter: $line"
                 exit 1
             fi
+            
+            # Check for undefined aliases
+            from_alias=$(echo "$line" | sed -E 's/^[[:space:]]*Rel[A-Za-z_]*\(([A-Za-z0-9_]+)[[:space:]]*,[[:space:]]*([A-Za-z0-9_]+).*/\1/')
+            to_alias=$(echo "$line" | sed -E 's/^[[:space:]]*Rel[A-Za-z_]*\(([A-Za-z0-9_]+)[[:space:]]*,[[:space:]]*([A-Za-z0-9_]+).*/\2/')
+            
+            if ! grep -q -E "\($from_alias[,\)]" "$FILE"; then
+                echo "❌ Found undefined alias '$from_alias' in Rel statement. This causes Mermaid to crash with 'Cannot read properties of undefined (reading x)'. Line: $line"
+                exit 1
+            fi
+            if ! grep -q -E "\($to_alias[,\)]" "$FILE"; then
+                echo "❌ Found undefined alias '$to_alias' in Rel statement. This causes Mermaid to crash with 'Cannot read properties of undefined (reading x)'. Line: $line"
+                exit 1
+            fi
         fi
     done < "$FILE"
 fi
