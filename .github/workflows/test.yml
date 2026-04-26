@@ -1,0 +1,23 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Make scripts executable
+      run: |
+        chmod +x tests/test-skill-format.sh
+        chmod +x tests/validate-c4-diagram.sh
+        
+    - name: Run Skill Validation Tests
+      run: |
+        cd tests
+        ./test-skill-format.sh
