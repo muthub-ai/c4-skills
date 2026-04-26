@@ -223,6 +223,7 @@ classDiagram
 ## Common pitfalls to avoid
 
 - **Skipping mode detection** — producing a diagram without knowing whether the user wants to design, retro-document, review, or update. The right workflow depends entirely on the mode.
+- **Undefined aliases in Rel** — If you write `Rel(A, B, "...")`, both `A` and `B` MUST be defined in the diagram. If you reference an undefined alias, Mermaid crashes with `Cannot read properties of undefined (reading 'x')`.
 - **Invalid boundaries** — NEVER append `{` to `System()` or `Container()`. To group elements, you MUST use `System_Boundary()` or `Container_Boundary()`. Doing otherwise causes Mermaid parse errors.
 - **Mixing abstraction levels** in the same diagram (e.g. a Container next to a Component at level 2)
 - **Forgetting external systems** at the Context level (a system never lives alone)

@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/muthub-ai/c4-skills/actions/workflows/test.yml"><img src="https://github.com/muthub-ai/c4-skills/actions/workflows/test.yml/badge.svg" alt="CI Status" /></a>
   <img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Status" />
   <img src="https://img.shields.io/badge/Skill-Universal-blue.svg" alt="Universal Skill" />
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
@@ -144,14 +145,19 @@ Want to test how well your AI agent performs without exposing your proprietary c
 
 ## 🧪 Testing
 
-To verify the integrity of the skill files and test the validity of the generated C4 outputs, we provide a test suite that runs automatically via GitHub Actions:
+To verify the integrity of the skill files and test the validity of the generated outputs, we provide a robust test suite that runs automatically via [GitHub Actions CI](https://github.com/muthub-ai/c4-skills/actions) on every Push and Pull Request.
+
+You can run the suite locally:
 
 ```bash
 cd tests
 ./test-skill-format.sh
 ```
 
-This test suite dynamically scans all `SKILL.md` files for structural integrity and strictly validates all Markdown diagrams within the `examples` and `example-codebase` directories against C4 and Mermaid syntax rules.
+The test runner executes three distinct suites:
+1. **Structural Validation:** Dynamically scans all `SKILL.md` files to enforce YAML frontmatter standards (`version`, `requires`, `compatible_agents`).
+2. **Sandbox Golden Validation:** Strictly validates the golden Mermaid C4 diagrams in the `example-codebase` against C4 syntax rules.
+3. **Behavioral Fixtures:** Runs scenario-based prompt/expected-output fixtures against domain-specific linters (`validate-c4-diagram.sh` and `validate-adr.sh`) to ensure expected AI outputs are syntactically perfect.
 
 ---
 
