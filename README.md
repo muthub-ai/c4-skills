@@ -7,6 +7,10 @@
 </p>
 
 <p align="center">
+  <a href="https://muthub-ai.github.io/c4-skills/"><img src="https://img.shields.io/badge/📖_Documentation-Read_the_Docs-6366f1?style=for-the-badge" alt="Documentation" /></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/muthub-ai/c4-skills/actions/workflows/test.yml"><img src="https://github.com/muthub-ai/c4-skills/actions/workflows/test.yml/badge.svg" alt="CI Status" /></a>
   <img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Status" />
   <img src="https://img.shields.io/badge/Skill-Universal-blue.svg" alt="Universal Skill" />

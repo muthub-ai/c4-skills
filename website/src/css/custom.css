@@ -1,0 +1,33 @@
+:root {
+  --ifm-color-primary: #6366f1;
+  --ifm-color-primary-dark: #4f52ec;
+  --ifm-color-primary-darker: #4346ea;
+  --ifm-color-primary-darkest: #2427e3;
+  --ifm-color-primary-light: #777af4;
+  --ifm-color-primary-lighter: #8385f5;
+  --ifm-color-primary-lightest: #a5a7f8;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6770f6;
+  --ifm-color-primary-darker: #5b65f5;
+  --ifm-color-primary-darkest: #2d38f2;
+  --ifm-color-primary-light: #9ba2fa;
+  --ifm-color-primary-lighter: #a7adfa;
+  --ifm-color-primary-lightest: #c7cbfd;
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+  --ifm-navbar-background-color: #0f172a;
+  --ifm-footer-background-color: #0f172a;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Clean admonition styles */
+.alert--info { border-left: 4px solid var(--ifm-color-primary); }
+
+/* Mermaid diagrams */
+.mermaid { text-align: center; margin: 2rem 0; }
