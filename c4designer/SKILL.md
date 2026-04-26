@@ -223,6 +223,7 @@ classDiagram
 ## Common pitfalls to avoid
 
 - **Skipping mode detection** — producing a diagram without knowing whether the user wants to design, retro-document, review, or update. The right workflow depends entirely on the mode.
+- **Invalid boundaries** — NEVER append `{` to `System()` or `Container()`. To group elements, you MUST use `System_Boundary()` or `Container_Boundary()`. Doing otherwise causes Mermaid parse errors.
 - **Mixing abstraction levels** in the same diagram (e.g. a Container next to a Component at level 2)
 - **Forgetting external systems** at the Context level (a system never lives alone)
 - **Overly dense diagrams** — if a Container has more than 15-20 components, it probably needs to be split
