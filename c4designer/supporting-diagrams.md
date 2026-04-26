@@ -30,12 +30,12 @@ C4Context
 
     System_Ext(mail, "E-mail System")
 
-    Rel(customer, banking_system, "Uses")
+    Rel(customer, banking_system, "Views account balances using")
     Rel(customer, atm, "Withdraws cash using")
-    Rel(customer, call_center, "Calls")
-    Rel(banking_system, mainframe, "Uses")
-    Rel(atm, mainframe, "Uses")
-    Rel(call_center, mainframe, "Uses")
+    Rel(customer, call_center, "Asks questions to")
+    Rel(banking_system, mainframe, "Gets account data from")
+    Rel(atm, mainframe, "Validates transactions with")
+    Rel(call_center, mainframe, "Looks up customer profiles using")
     Rel(banking_system, mail, "Sends e-mail using")
 ```
 

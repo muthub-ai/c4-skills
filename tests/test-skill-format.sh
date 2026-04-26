@@ -33,12 +33,33 @@ for SKILL_FILE in ../*/SKILL.md; do
         exit 1
     fi
 
+    if grep -q "^version:" "$SKILL_FILE"; then
+        echo "✅ YAML frontmatter contains version"
+    else
+        echo "❌ YAML frontmatter missing version"
+        exit 1
+    fi
+
+    if grep -q "^requires:" "$SKILL_FILE" && grep -q "^compatible_agents:" "$SKILL_FILE"; then
+        echo "✅ YAML frontmatter contains enterprise compatibility metadata"
+    else
+        echo "❌ YAML frontmatter missing requires or compatible_agents"
+        exit 1
+    fi
+
     # Optional: Run diagram tests if examples exist
     if [ -d "$SKILL_DIR/examples" ] && [ "$SKILL_NAME" = "c4designer" ]; then
         echo "Testing C4 Diagram Validation against examples for $SKILL_NAME..."
         for example in "$SKILL_DIR"/examples/*.md; do
             if [ -f "$example" ]; then
                 ./validate-c4-diagram.sh "$example"
+            fi
+        done
+    elif [ -d "$SKILL_DIR/examples" ] && [ "$SKILL_NAME" = "adr-scribe" ]; then
+        echo "Testing ADR Validation against examples for $SKILL_NAME..."
+        for example in "$SKILL_DIR"/examples/*.md; do
+            if [ -f "$example" ]; then
+                ./validate-adr.sh "$example"
             fi
         done
     fi

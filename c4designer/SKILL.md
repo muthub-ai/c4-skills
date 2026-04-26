@@ -1,6 +1,8 @@
 ---
 name: c4-model
 version: 1.0.0
+requires: []
+compatible_agents: ["copilot", "claude-code", "cursor", "devin", "windsurf"]
 description: Interactively co-build a software architecture using Simon Brown's C4 model (Context, Container, Component, Code). The skill detects the usage mode (greenfield design, retro-documenting from code or prose, review/explanation, update), runs a structured framing dialogue, proposes incremental drafts, and iterates until explicit user validation. Output format is negotiated (default Mermaid C4 + Markdown; alternatives Structurizr DSL, PlantUML, images). Destination is negotiated too: local filesystem by default, or connected MCP (Notion, Google Drive, Linear documents…). Use this skill whenever the user asks for a C4 diagram, modèle C4, architecture diagram, container diagram, system context, diagramme d'architecture, wants to brainstorm/design a system architecture, shares code or prose wanting it documented, or wants to review/update an existing C4. Trigger proactively whenever an architecture overview or system documentation would clearly help — even without an explicit "C4" mention.
 ---
 
