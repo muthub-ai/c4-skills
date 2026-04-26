@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="[https://muthub-ai.github.io/c4-skills/](https://muthub-ai.github.io/c4-skills/docs/docs/skills/c4designer/)"><img src="https://img.shields.io/badge/📖_Documentation-Read_the_Docs-6366f1?style=for-the-badge" alt="Documentation" /></a>
+  <a href="https://muthub-ai.github.io/c4-skills/"><img src="https://img.shields.io/badge/📖_Documentation-Read_the_Docs-6366f1?style=for-the-badge" alt="Documentation" /></a>
 </p>
 
 <p align="center">
