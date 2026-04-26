@@ -1,0 +1,28 @@
+{
+  "id": "skills/c4designer/mode-document-prose",
+  "title": "Document-Prose Mode",
+  "description": "Use this mode to generate C4 diagrams from written descriptions — README files, architecture specs, meeting transcripts, or any prose that describes your system.",
+  "source": "@site/docs/skills/c4designer/mode-document-prose.md",
+  "sourceDirName": "skills/c4designer",
+  "slug": "/skills/c4designer/mode-document-prose",
+  "permalink": "/c4-skills/docs/skills/c4designer/mode-document-prose",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/c4designer/mode-document-prose.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Mode: Document Prose",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mode: Document Code",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-document-code"
+  },
+  "next": {
+    "title": "Mode: Review",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-review"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "troubleshooting/validator-errors",
+  "title": "Validator Errors",
+  "description": "Every error message that tests/validate-c4-diagram.sh and tests/validate-adr.sh can emit, with the exact cause and fix.",
+  "source": "@site/docs/troubleshooting/validator-errors.md",
+  "sourceDirName": "troubleshooting",
+  "slug": "/troubleshooting/validator-errors",
+  "permalink": "/c4-skills/docs/troubleshooting/validator-errors",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/troubleshooting/validator-errors.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mermaid Errors",
+    "permalink": "/c4-skills/docs/troubleshooting/mermaid-errors"
+  },
+  "next": {
+    "title": "Agent-Specific Issues",
+    "permalink": "/c4-skills/docs/troubleshooting/agent-issues"
+  }
+}

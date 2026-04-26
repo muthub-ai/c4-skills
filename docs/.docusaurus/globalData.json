@@ -1,0 +1,133 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/c4-skills/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/c4-skills/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "contributing/behavioral-tests",
+              "path": "/c4-skills/docs/contributing/behavioral-tests",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "contributing/index",
+              "path": "/c4-skills/docs/contributing/",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "contributing/new-skill",
+              "path": "/c4-skills/docs/contributing/new-skill",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "examples/adr-postgresql",
+              "path": "/c4-skills/docs/examples/adr-postgresql",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "examples/banking-system",
+              "path": "/c4-skills/docs/examples/banking-system",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "getting-started/first-diagram",
+              "path": "/c4-skills/docs/getting-started/first-diagram",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "getting-started/installation",
+              "path": "/c4-skills/docs/getting-started/installation",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/c4-skills/docs/",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/adr-scribe/index",
+              "path": "/c4-skills/docs/skills/adr-scribe/",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/adr-scribe/mode-interview",
+              "path": "/c4-skills/docs/skills/adr-scribe/mode-interview",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/adr-scribe/mode-retro-document",
+              "path": "/c4-skills/docs/skills/adr-scribe/mode-retro-document",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/adr-scribe/mode-review",
+              "path": "/c4-skills/docs/skills/adr-scribe/mode-review",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/c4designer/index",
+              "path": "/c4-skills/docs/skills/c4designer/",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/c4designer/mode-design",
+              "path": "/c4-skills/docs/skills/c4designer/mode-design",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/c4designer/mode-document-code",
+              "path": "/c4-skills/docs/skills/c4designer/mode-document-code",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/c4designer/mode-document-prose",
+              "path": "/c4-skills/docs/skills/c4designer/mode-document-prose",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/c4designer/mode-review",
+              "path": "/c4-skills/docs/skills/c4designer/mode-review",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "skills/c4designer/mode-update",
+              "path": "/c4-skills/docs/skills/c4designer/mode-update",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "troubleshooting/agent-issues",
+              "path": "/c4-skills/docs/troubleshooting/agent-issues",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "troubleshooting/mermaid-errors",
+              "path": "/c4-skills/docs/troubleshooting/mermaid-errors",
+              "sidebar": "mainSidebar"
+            },
+            {
+              "id": "troubleshooting/validator-errors",
+              "path": "/c4-skills/docs/troubleshooting/validator-errors",
+              "sidebar": "mainSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "mainSidebar": {
+              "link": {
+                "path": "/c4-skills/docs/",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "troubleshooting/mermaid-errors",
+  "title": "Mermaid Errors",
+  "description": "This page documents every known Mermaid C4 rendering error, its root cause, and the exact fix.",
+  "source": "@site/docs/troubleshooting/mermaid-errors.md",
+  "sourceDirName": "troubleshooting",
+  "slug": "/troubleshooting/mermaid-errors",
+  "permalink": "/c4-skills/docs/troubleshooting/mermaid-errors",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/troubleshooting/mermaid-errors.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "ADR: PostgreSQL over MongoDB",
+    "permalink": "/c4-skills/docs/examples/adr-postgresql"
+  },
+  "next": {
+    "title": "Validator Errors",
+    "permalink": "/c4-skills/docs/troubleshooting/validator-errors"
+  }
+}

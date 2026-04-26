@@ -1,0 +1,27 @@
+{
+  "id": "getting-started/first-diagram",
+  "title": "Your First Diagram",
+  "description": "Generate a C4 Container Diagram from scratch in under 5 minutes.",
+  "source": "@site/docs/getting-started/first-diagram.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/first-diagram",
+  "permalink": "/c4-skills/docs/getting-started/first-diagram",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/getting-started/first-diagram.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/c4-skills/docs/getting-started/installation"
+  },
+  "next": {
+    "title": "c4designer",
+    "permalink": "/c4-skills/docs/skills/c4designer/"
+  }
+}

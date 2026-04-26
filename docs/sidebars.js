@@ -46,16 +46,6 @@ const sidebars = {
       items: [
         'examples/banking-system',
         'examples/adr-postgresql',
-        'examples/complex-microservices',
-      ],
-    },
-    {
-      type: 'category',
-      label: '📚 Reference',
-      items: [
-        'reference/mermaid-c4-syntax',
-        'reference/notation-rules',
-        'reference/adr-template',
       ],
     },
     {

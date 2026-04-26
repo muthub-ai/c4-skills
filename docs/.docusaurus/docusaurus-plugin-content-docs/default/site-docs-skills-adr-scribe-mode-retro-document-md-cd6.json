@@ -1,0 +1,28 @@
+{
+  "id": "skills/adr-scribe/mode-retro-document",
+  "title": "Retro-Document Mode",
+  "description": "Use this mode when a decision has already been made and you want to document it retroactively from a PR, commit, or code diff.",
+  "source": "@site/docs/skills/adr-scribe/mode-retro-document.md",
+  "sourceDirName": "skills/adr-scribe",
+  "slug": "/skills/adr-scribe/mode-retro-document",
+  "permalink": "/c4-skills/docs/skills/adr-scribe/mode-retro-document",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/adr-scribe/mode-retro-document.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Mode: Retro-Document",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mode: Interview",
+    "permalink": "/c4-skills/docs/skills/adr-scribe/mode-interview"
+  },
+  "next": {
+    "title": "Mode: Review",
+    "permalink": "/c4-skills/docs/skills/adr-scribe/mode-review"
+  }
+}

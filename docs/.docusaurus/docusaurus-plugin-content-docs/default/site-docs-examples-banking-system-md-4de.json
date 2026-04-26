@@ -1,0 +1,27 @@
+{
+  "id": "examples/banking-system",
+  "title": "Internet Banking System",
+  "description": "A complete worked example showing both a Level 1 Context and Level 2 Container diagram for a fictional Internet Banking System — the canonical C4 model reference example.",
+  "source": "@site/docs/examples/banking-system.md",
+  "sourceDirName": "examples",
+  "slug": "/examples/banking-system",
+  "permalink": "/c4-skills/docs/examples/banking-system",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/examples/banking-system.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mode: Review",
+    "permalink": "/c4-skills/docs/skills/adr-scribe/mode-review"
+  },
+  "next": {
+    "title": "ADR: PostgreSQL over MongoDB",
+    "permalink": "/c4-skills/docs/examples/adr-postgresql"
+  }
+}

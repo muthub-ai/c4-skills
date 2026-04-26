@@ -1,0 +1,27 @@
+{
+  "id": "troubleshooting/agent-issues",
+  "title": "Agent-Specific Issues",
+  "description": "Known quirks and workarounds for specific AI agents.",
+  "source": "@site/docs/troubleshooting/agent-issues.md",
+  "sourceDirName": "troubleshooting",
+  "slug": "/troubleshooting/agent-issues",
+  "permalink": "/c4-skills/docs/troubleshooting/agent-issues",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/troubleshooting/agent-issues.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Validator Errors",
+    "permalink": "/c4-skills/docs/troubleshooting/validator-errors"
+  },
+  "next": {
+    "title": "Contributing Overview",
+    "permalink": "/c4-skills/docs/contributing/"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "skills/c4designer/mode-review",
+  "title": "Review Mode",
+  "description": "Use this mode to get a structured critique of an existing C4 diagram. The agent evaluates it against Simon Brown's official review checklist and the additional rules enforced by c4designer.",
+  "source": "@site/docs/skills/c4designer/mode-review.md",
+  "sourceDirName": "skills/c4designer",
+  "slug": "/skills/c4designer/mode-review",
+  "permalink": "/c4-skills/docs/skills/c4designer/mode-review",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/c4designer/mode-review.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_label": "Mode: Review",
+    "sidebar_position": 4
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mode: Document Prose",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-document-prose"
+  },
+  "next": {
+    "title": "Mode: Update",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-update"
+  }
+}

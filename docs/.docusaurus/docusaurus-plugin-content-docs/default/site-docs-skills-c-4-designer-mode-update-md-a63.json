@@ -1,0 +1,28 @@
+{
+  "id": "skills/c4designer/mode-update",
+  "title": "Update Mode",
+  "description": "Use this mode to evolve an existing diagram incrementally — adding new containers, removing deprecated services, or changing relationship protocols.",
+  "source": "@site/docs/skills/c4designer/mode-update.md",
+  "sourceDirName": "skills/c4designer",
+  "slug": "/skills/c4designer/mode-update",
+  "permalink": "/c4-skills/docs/skills/c4designer/mode-update",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/c4designer/mode-update.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_label": "Mode: Update",
+    "sidebar_position": 5
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mode: Review",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-review"
+  },
+  "next": {
+    "title": "adr-scribe",
+    "permalink": "/c4-skills/docs/skills/adr-scribe/"
+  }
+}

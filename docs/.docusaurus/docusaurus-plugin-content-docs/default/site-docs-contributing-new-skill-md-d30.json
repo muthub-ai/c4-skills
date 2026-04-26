@@ -1,0 +1,27 @@
+{
+  "id": "contributing/new-skill",
+  "title": "Adding a New Skill",
+  "description": "A step-by-step guide to creating a new skill that integrates cleanly with the c4-skills framework.",
+  "source": "@site/docs/contributing/new-skill.md",
+  "sourceDirName": "contributing",
+  "slug": "/contributing/new-skill",
+  "permalink": "/c4-skills/docs/contributing/new-skill",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/contributing/new-skill.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Contributing Overview",
+    "permalink": "/c4-skills/docs/contributing/"
+  },
+  "next": {
+    "title": "Writing Behavioral Tests",
+    "permalink": "/c4-skills/docs/contributing/behavioral-tests"
+  }
+}

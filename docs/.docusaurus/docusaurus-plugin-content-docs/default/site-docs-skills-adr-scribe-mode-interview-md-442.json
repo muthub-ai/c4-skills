@@ -1,0 +1,28 @@
+{
+  "id": "skills/adr-scribe/mode-interview",
+  "title": "Interview Mode",
+  "description": "Use this mode to draft a new ADR through a guided conversation. The agent interviews you to gather the context, options considered, and the decision rationale — then produces a complete MADR document.",
+  "source": "@site/docs/skills/adr-scribe/mode-interview.md",
+  "sourceDirName": "skills/adr-scribe",
+  "slug": "/skills/adr-scribe/mode-interview",
+  "permalink": "/c4-skills/docs/skills/adr-scribe/mode-interview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/adr-scribe/mode-interview.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_label": "Mode: Interview",
+    "sidebar_position": 1
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "adr-scribe",
+    "permalink": "/c4-skills/docs/skills/adr-scribe/"
+  },
+  "next": {
+    "title": "Mode: Retro-Document",
+    "permalink": "/c4-skills/docs/skills/adr-scribe/mode-retro-document"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "/c4-skills/docs-b3d": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/c4-skills/docs-d56": {
+    "__comp": "a7bd4aaa",
+    "__props": "1a505bbd"
+  },
+  "/c4-skills/docs-2f5": {
+    "__comp": "a94703ab"
+  },
+  "/c4-skills/docs/-4fd": {
+    "__comp": "17896441",
+    "content": "0e384e19"
+  },
+  "/c4-skills/docs/contributing/-023": {
+    "__comp": "17896441",
+    "content": "234918e4"
+  },
+  "/c4-skills/docs/contributing/behavioral-tests-557": {
+    "__comp": "17896441",
+    "content": "a0c7b696"
+  },
+  "/c4-skills/docs/contributing/new-skill-4a1": {
+    "__comp": "17896441",
+    "content": "d300dc81"
+  },
+  "/c4-skills/docs/examples/adr-postgresql-f9d": {
+    "__comp": "17896441",
+    "content": "d13d0e26"
+  },
+  "/c4-skills/docs/examples/banking-system-710": {
+    "__comp": "17896441",
+    "content": "4de7729f"
+  },
+  "/c4-skills/docs/getting-started/first-diagram-325": {
+    "__comp": "17896441",
+    "content": "751e72a7"
+  },
+  "/c4-skills/docs/getting-started/installation-0d6": {
+    "__comp": "17896441",
+    "content": "54f44165"
+  },
+  "/c4-skills/docs/skills/adr-scribe/-bfb": {
+    "__comp": "17896441",
+    "content": "3e195cb6"
+  },
+  "/c4-skills/docs/skills/adr-scribe/mode-interview-da5": {
+    "__comp": "17896441",
+    "content": "442a0ba0"
+  },
+  "/c4-skills/docs/skills/adr-scribe/mode-retro-document-a26": {
+    "__comp": "17896441",
+    "content": "cd6f6016"
+  },
+  "/c4-skills/docs/skills/adr-scribe/mode-review-f98": {
+    "__comp": "17896441",
+    "content": "821ea22a"
+  },
+  "/c4-skills/docs/skills/c4designer/-2bd": {
+    "__comp": "17896441",
+    "content": "a2f9f635"
+  },
+  "/c4-skills/docs/skills/c4designer/mode-design-0b0": {
+    "__comp": "17896441",
+    "content": "88954433"
+  },
+  "/c4-skills/docs/skills/c4designer/mode-document-code-f98": {
+    "__comp": "17896441",
+    "content": "9cac8ec0"
+  },
+  "/c4-skills/docs/skills/c4designer/mode-document-prose-43a": {
+    "__comp": "17896441",
+    "content": "7fc56f78"
+  },
+  "/c4-skills/docs/skills/c4designer/mode-review-7c0": {
+    "__comp": "17896441",
+    "content": "d9c4ced1"
+  },
+  "/c4-skills/docs/skills/c4designer/mode-update-9b0": {
+    "__comp": "17896441",
+    "content": "a630c2da"
+  },
+  "/c4-skills/docs/troubleshooting/agent-issues-798": {
+    "__comp": "17896441",
+    "content": "52998b56"
+  },
+  "/c4-skills/docs/troubleshooting/mermaid-errors-4cb": {
+    "__comp": "17896441",
+    "content": "535b82e3"
+  },
+  "/c4-skills/docs/troubleshooting/validator-errors-8b3": {
+    "__comp": "17896441",
+    "content": "fc91ba55"
+  }
+}

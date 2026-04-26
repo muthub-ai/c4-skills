@@ -1,0 +1,28 @@
+{
+  "id": "skills/c4designer/mode-document-code",
+  "title": "Document-Code Mode",
+  "description": "Use this mode to retro-document an existing codebase. The agent scans your files and generates C4 diagrams from what it finds — no design dialogue required.",
+  "source": "@site/docs/skills/c4designer/mode-document-code.md",
+  "sourceDirName": "skills/c4designer",
+  "slug": "/skills/c4designer/mode-document-code",
+  "permalink": "/c4-skills/docs/skills/c4designer/mode-document-code",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/c4designer/mode-document-code.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Mode: Document Code",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mode: Design",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-design"
+  },
+  "next": {
+    "title": "Mode: Document Prose",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-document-prose"
+  }
+}

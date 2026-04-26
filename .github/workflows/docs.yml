@@ -26,15 +26,15 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: website
+        working-directory: docs
 
       - name: Build documentation site
         run: npm run build
-        working-directory: website
+        working-directory: docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/build
+          publish_dir: ./docs/build
           cname: ''

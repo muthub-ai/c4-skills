@@ -1,0 +1,28 @@
+{
+  "id": "skills/adr-scribe/mode-review",
+  "title": "Review Mode (adr-scribe)",
+  "description": "Use this mode to get a structured critique of an existing ADR. The agent checks it for completeness, balance, and adherence to the MADR standard.",
+  "source": "@site/docs/skills/adr-scribe/mode-review.md",
+  "sourceDirName": "skills/adr-scribe",
+  "slug": "/skills/adr-scribe/mode-review",
+  "permalink": "/c4-skills/docs/skills/adr-scribe/mode-review",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/adr-scribe/mode-review.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Mode: Review",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mode: Retro-Document",
+    "permalink": "/c4-skills/docs/skills/adr-scribe/mode-retro-document"
+  },
+  "next": {
+    "title": "Internet Banking System",
+    "permalink": "/c4-skills/docs/examples/banking-system"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "skills/c4designer/index",
+  "title": "c4designer",
+  "description": "The c4designer skill teaches your AI agent to act as a C4 model expert. It implements Simon Brown's C4 model across 5 operational modes and enforces strict architectural notation rules on every output.",
+  "source": "@site/docs/skills/c4designer/index.md",
+  "sourceDirName": "skills/c4designer",
+  "slug": "/skills/c4designer/",
+  "permalink": "/c4-skills/docs/skills/c4designer/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/c4designer/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Your First Diagram",
+    "permalink": "/c4-skills/docs/getting-started/first-diagram"
+  },
+  "next": {
+    "title": "Mode: Design",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-design"
+  }
+}

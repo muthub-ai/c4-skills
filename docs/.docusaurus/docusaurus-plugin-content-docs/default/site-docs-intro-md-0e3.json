@@ -1,0 +1,24 @@
+{
+  "id": "intro",
+  "title": "Welcome to c4-skills",
+  "description": "c4-skills is a universal, agent-agnostic \"Skill\" package that teaches any AI coding agent how to act as an expert Software Architect using the C4 model and Architecture Decision Records (ADRs).",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/c4-skills/docs/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "slug": "/",
+    "sidebar_position": 1
+  },
+  "sidebar": "mainSidebar",
+  "next": {
+    "title": "Installation",
+    "permalink": "/c4-skills/docs/getting-started/installation"
+  }
+}

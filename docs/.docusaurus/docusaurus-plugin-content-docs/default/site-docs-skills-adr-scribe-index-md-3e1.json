@@ -1,0 +1,27 @@
+{
+  "id": "skills/adr-scribe/index",
+  "title": "adr-scribe",
+  "description": "The adr-scribe skill teaches your AI agent to draft, retro-document, and review Architecture Decision Records (ADRs) using the Michael Nygard MADR template. It is the companion to c4designer — if c4designer documents what the architecture is, adr-scribe documents why it was built that way.",
+  "source": "@site/docs/skills/adr-scribe/index.md",
+  "sourceDirName": "skills/adr-scribe",
+  "slug": "/skills/adr-scribe/",
+  "permalink": "/c4-skills/docs/skills/adr-scribe/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/adr-scribe/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Mode: Update",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-update"
+  },
+  "next": {
+    "title": "Mode: Interview",
+    "permalink": "/c4-skills/docs/skills/adr-scribe/mode-interview"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "examples/adr-postgresql",
+  "title": "ADR: PostgreSQL over MongoDB",
+  "description": "A complete, worked Architecture Decision Record for the fictional Internet Banking System. This demonstrates the full MADR template as produced by adr-scribe in Interview mode.",
+  "source": "@site/docs/examples/adr-postgresql.md",
+  "sourceDirName": "examples",
+  "slug": "/examples/adr-postgresql",
+  "permalink": "/c4-skills/docs/examples/adr-postgresql",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/examples/adr-postgresql.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Internet Banking System",
+    "permalink": "/c4-skills/docs/examples/banking-system"
+  },
+  "next": {
+    "title": "Mermaid Errors",
+    "permalink": "/c4-skills/docs/troubleshooting/mermaid-errors"
+  }
+}

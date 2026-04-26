@@ -1,0 +1,27 @@
+{
+  "id": "contributing/index",
+  "title": "Contributing Overview",
+  "description": "Thank you for considering contributing to c4-skills!",
+  "source": "@site/docs/contributing/index.md",
+  "sourceDirName": "contributing",
+  "slug": "/contributing/",
+  "permalink": "/c4-skills/docs/contributing/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/contributing/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Agent-Specific Issues",
+    "permalink": "/c4-skills/docs/troubleshooting/agent-issues"
+  },
+  "next": {
+    "title": "Adding a New Skill",
+    "permalink": "/c4-skills/docs/contributing/new-skill"
+  }
+}

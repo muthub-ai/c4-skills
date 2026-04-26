@@ -1,0 +1,28 @@
+{
+  "id": "skills/c4designer/mode-design",
+  "title": "Design Mode",
+  "description": "Use this mode when you want to design a new system from scratch. The agent runs a structured 5-phase dialogue to gather requirements before generating any output.",
+  "source": "@site/docs/skills/c4designer/mode-design.md",
+  "sourceDirName": "skills/c4designer",
+  "slug": "/skills/c4designer/mode-design",
+  "permalink": "/c4-skills/docs/skills/c4designer/mode-design",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/muthub-ai/c4-skills/tree/main/website/docs/skills/c4designer/mode-design.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_label": "Mode: Design",
+    "sidebar_position": 1
+  },
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "c4designer",
+    "permalink": "/c4-skills/docs/skills/c4designer/"
+  },
+  "next": {
+    "title": "Mode: Document Code",
+    "permalink": "/c4-skills/docs/skills/c4designer/mode-document-code"
+  }
+}
