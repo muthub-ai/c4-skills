@@ -1,62 +1,120 @@
 #!/bin/bash
+# =============================================================================
+# c4-skills Test Suite
+# =============================================================================
+# Validates the structural integrity, YAML frontmatter compliance, and
+# domain-specific syntax of all skills and generated artifacts in this repo.
+#
+# Usage: ./test-skill-format.sh
+# Exit codes: 0 = all tests passed, 1 = one or more tests failed
+# =============================================================================
+
 set -e
 
-echo "Running Skills Validation Tests..."
+# --- Formatting helpers -------------------------------------------------------
+BOLD="\033[1m"
+DIM="\033[2m"
+GREEN="\033[0;32m"
+RED="\033[0;31m"
+YELLOW="\033[0;33m"
+CYAN="\033[0;36m"
+RESET="\033[0m"
 
-# Find all skill directories containing SKILL.md
+PASS="  ${GREEN}✔${RESET}"
+FAIL="  ${RED}✘${RESET}"
+INFO="  ${CYAN}→${RESET}"
+
+PASS_COUNT=0
+FAIL_COUNT=0
+SUITE_START=$(date +%s)
+
+# --- Utility: pass/fail counters ----------------------------------------------
+pass() { echo -e "$PASS $1"; PASS_COUNT=$((PASS_COUNT + 1)); }
+fail() { echo -e "$FAIL $1"; FAIL_COUNT=$((FAIL_COUNT + 1)); }
+info() { echo -e "$INFO ${DIM}$1${RESET}"; }
+section() {
+    echo ""
+    echo -e "${BOLD}${CYAN}══ $1 ══${RESET}"
+}
+
+# --- Suite header -------------------------------------------------------------
+echo ""
+echo -e "${BOLD}╔══════════════════════════════════════════════════╗${RESET}"
+echo -e "${BOLD}║         c4-skills Test Suite v1.0                ║${RESET}"
+echo -e "${BOLD}╚══════════════════════════════════════════════════╝${RESET}"
+echo -e "  ${DIM}Running all structural, compliance, and domain checks...${RESET}"
+echo ""
+
+# =============================================================================
+# SUITE 1: Skill Structural Validation
+# =============================================================================
+section "SUITE 1: Skill YAML Frontmatter & Structure"
+
 for SKILL_FILE in ../*/SKILL.md; do
     SKILL_DIR=$(dirname "$SKILL_FILE")
     SKILL_NAME=$(basename "$SKILL_DIR")
-    
-    echo "-----------------------------------"
-    echo "Testing Skill: $SKILL_NAME"
-    echo "-----------------------------------"
 
-    if [ ! -f "$SKILL_FILE" ]; then
-        echo "❌ SKILL.md not found in $SKILL_DIR"
+    echo ""
+    echo -e "  ${BOLD}Skill: $SKILL_NAME${RESET}"
+    info "Source: $SKILL_FILE"
+
+    # Test 1.1 — SKILL.md exists
+    if [ -f "$SKILL_FILE" ]; then
+        pass "[1.1] SKILL.md exists"
+    else
+        fail "[1.1] SKILL.md not found at $SKILL_FILE"
         exit 1
     fi
-    echo "✅ SKILL.md exists"
 
-    # Test YAML frontmatter
+    # Test 1.2 — YAML frontmatter starts with ---
     if head -n 1 "$SKILL_FILE" | grep -q "^---$"; then
-        echo "✅ YAML frontmatter starts correctly"
+        pass "[1.2] YAML frontmatter opens correctly (---)"
     else
-        echo "❌ YAML frontmatter missing starting '---'"
+        fail "[1.2] YAML frontmatter missing opening '---'"
         exit 1
     fi
 
+    # Test 1.3 — Required fields: name, description
     if grep -q "^name:" "$SKILL_FILE" && grep -q "^description:" "$SKILL_FILE"; then
-        echo "✅ YAML frontmatter contains name and description"
+        NAME=$(grep "^name:" "$SKILL_FILE" | head -1 | cut -d' ' -f2-)
+        pass "[1.3] Required fields present (name: $NAME, description)"
     else
-        echo "❌ YAML frontmatter missing name or description"
+        fail "[1.3] YAML missing required 'name' or 'description' field"
         exit 1
     fi
 
+    # Test 1.4 — Version field
     if grep -q "^version:" "$SKILL_FILE"; then
-        echo "✅ YAML frontmatter contains version"
+        VERSION=$(grep "^version:" "$SKILL_FILE" | head -1 | cut -d' ' -f2-)
+        pass "[1.4] Version declared (version: $VERSION)"
     else
-        echo "❌ YAML frontmatter missing version"
+        fail "[1.4] YAML missing 'version' field — required for enterprise tracking"
         exit 1
     fi
 
+    # Test 1.5 — Enterprise compatibility metadata
     if grep -q "^requires:" "$SKILL_FILE" && grep -q "^compatible_agents:" "$SKILL_FILE"; then
-        echo "✅ YAML frontmatter contains enterprise compatibility metadata"
+        pass "[1.5] Enterprise compatibility metadata present (requires, compatible_agents)"
     else
-        echo "❌ YAML frontmatter missing requires or compatible_agents"
+        fail "[1.5] YAML missing 'requires' or 'compatible_agents' — required for enterprise adoption"
         exit 1
     fi
 
-    # Optional: Run diagram tests if examples exist
+    # Test 1.6 — C4 diagram validation for c4designer examples
     if [ -d "$SKILL_DIR/examples" ] && [ "$SKILL_NAME" = "c4designer" ]; then
-        echo "Testing C4 Diagram Validation against examples for $SKILL_NAME..."
+        echo ""
+        info "Running C4 syntax validation on examples..."
         for example in "$SKILL_DIR"/examples/*.md; do
             if [ -f "$example" ]; then
                 ./validate-c4-diagram.sh "$example"
             fi
         done
-    elif [ -d "$SKILL_DIR/examples" ] && [ "$SKILL_NAME" = "adr-scribe" ]; then
-        echo "Testing ADR Validation against examples for $SKILL_NAME..."
+    fi
+
+    # Test 1.7 — ADR validation for adr-scribe examples
+    if [ -d "$SKILL_DIR/examples" ] && [ "$SKILL_NAME" = "adr-scribe" ]; then
+        echo ""
+        info "Running ADR completeness validation on examples..."
         for example in "$SKILL_DIR"/examples/*.md; do
             if [ -f "$example" ]; then
                 ./validate-adr.sh "$example"
@@ -65,17 +123,89 @@ for SKILL_FILE in ../*/SKILL.md; do
     fi
 done
 
-# Validate the generated examples from the sandbox example-codebase
+# =============================================================================
+# SUITE 2: Sandbox Diagram Validation
+# =============================================================================
+section "SUITE 2: Sandbox Golden Diagram Validation"
+
 if [ -d "example-codebase/diagrams" ]; then
-    echo "-----------------------------------"
-    echo "Testing Generated Sandbox Diagrams"
-    echo "-----------------------------------"
+    echo ""
+    info "Validating golden C4 diagrams in example-codebase/diagrams..."
     for example in example-codebase/diagrams/*.md; do
         if [ -f "$example" ]; then
             ./validate-c4-diagram.sh "$example"
         fi
     done
+else
+    echo -e "  ${YELLOW}⚠  No sandbox diagrams found — skipping Suite 2${RESET}"
 fi
 
-echo "🎉 All tests passed successfully!"
+# =============================================================================
+# SUITE 3: Behavioral Fixture Validation
+# =============================================================================
+section "SUITE 3: Behavioral Fixture Validation"
+
+BEHAVIORAL_DIR="behavioral"
+if [ -d "$BEHAVIORAL_DIR" ]; then
+    echo ""
+    info "Running behavioral fixture checks..."
+    FIXTURE_COUNT=0
+    FIXTURE_PASS=0
+    for fixture_dir in "$BEHAVIORAL_DIR"/*/; do
+        if [ -d "$fixture_dir" ]; then
+            FIXTURE_COUNT=$((FIXTURE_COUNT + 1))
+            fixture_name=$(basename "$fixture_dir")
+            expected="$fixture_dir/expected.md"
+            if [ -f "$expected" ]; then
+                # Route to the right validator using skill.txt in the fixture dir
+                FIXTURE_SKILL="c4designer"
+                if [ -f "$fixture_dir/skill.txt" ]; then
+                    FIXTURE_SKILL=$(cat "$fixture_dir/skill.txt" | tr -d '[:space:]')
+                fi
+                if [ "$FIXTURE_SKILL" = "adr-scribe" ]; then
+                    VALIDATOR="./validate-adr.sh"
+                else
+                    VALIDATOR="./validate-c4-diagram.sh"
+                fi
+                $VALIDATOR "$expected" 2>/dev/null \
+                    && pass "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': expected output is valid" \
+                    || fail "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': expected output failed validation"
+                FIXTURE_PASS=$((FIXTURE_PASS + 1))
+            else
+                fail "[3.$FIXTURE_COUNT] Behavioral fixture '$fixture_name': missing expected.md"
+            fi
+        fi
+    done
+    if [ "$FIXTURE_COUNT" -eq 0 ]; then
+        echo -e "  ${YELLOW}⚠  No behavioral fixtures found in $BEHAVIORAL_DIR/${RESET}"
+    fi
+else
+    echo -e "  ${YELLOW}⚠  Behavioral test directory not found — skipping Suite 3${RESET}"
+fi
+
+# =============================================================================
+# Test Summary
+# =============================================================================
+SUITE_END=$(date +%s)
+DURATION=$((SUITE_END - SUITE_START))
+
+echo ""
+echo -e "${BOLD}╔══════════════════════════════════════════════════╗${RESET}"
+echo -e "${BOLD}║                  Test Summary                    ║${RESET}"
+echo -e "${BOLD}╠══════════════════════════════════════════════════╣${RESET}"
+echo -e "  ${GREEN}Passed:${RESET}   $PASS_COUNT checks"
+if [ "$FAIL_COUNT" -gt 0 ]; then
+    echo -e "  ${RED}Failed:${RESET}   $FAIL_COUNT checks"
+fi
+echo -e "  ${DIM}Duration: ${DURATION}s${RESET}"
+echo -e "${BOLD}╚══════════════════════════════════════════════════╝${RESET}"
+echo ""
+
+if [ "$FAIL_COUNT" -gt 0 ]; then
+    echo -e "${RED}${BOLD}✘ Test suite FAILED — $FAIL_COUNT check(s) did not pass.${RESET}"
+    exit 1
+fi
+
+echo -e "${GREEN}${BOLD}✔ All checks passed. The repository is in a healthy state.${RESET}"
+echo ""
 exit 0
