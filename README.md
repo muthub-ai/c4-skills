@@ -7,13 +7,13 @@
 </p>
 
 <p align="center">
-  <a href="[https://muthub-ai.github.io/c4-skills/](https://muthub-ai.github.io/c4-skills/docs/docs/skills/c4designer/)"><img src="https://img.shields.io/badge/📖_Documentation-Read_the_Docs-6366f1?style=for-the-badge" alt="Documentation" /></a>
+  <a href="https://deepwiki.com/muthub-ai/c4-skills"><img src="https://img.shields.io/badge/📖_Documentation-User_Guide-6366f1?style=for-the-badge" alt="Documentation" /></a>
 </p>
 
 <p align="center">
+  <a href="https://deepwiki.com/muthub-ai/c4-skills"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki" /></a>
   <a href="https://github.com/muthub-ai/c4-skills/actions/workflows/test.yml"><img src="https://github.com/muthub-ai/c4-skills/actions/workflows/test.yml/badge.svg" alt="CI Status" /></a>
   <img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Status" />
-  <img src="https://img.shields.io/badge/Skill-Universal-blue.svg" alt="Universal Skill" />
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
 </p>
 

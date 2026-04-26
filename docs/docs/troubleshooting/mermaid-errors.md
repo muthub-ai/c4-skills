@@ -22,7 +22,7 @@ C4Container
 
     Container(api, "API", "Node.js", "The API.")
     Rel(api, db, "Reads from", "JDBC")
-    <!--         ^^^ 'db' was never defined above! -->
+    %%         ^^^ 'db' was never defined above!
 ```
 
 ### Fix
@@ -95,7 +95,7 @@ A `Rel` between two containers is missing the 4th (protocol) parameter:
 
 ```
 Rel(spa, api, "Makes API calls to")
-<!--                              ^ missing protocol -->
+%%                              ^ missing protocol
 ```
 
 ### Fix
@@ -142,7 +142,7 @@ A `Container` is declared without its technology (3rd parameter):
 
 ```
 Container(api, "API Application", "Provides banking functionality.")
-<!--               no technology ^^ -->
+%%               no technology ^^
 ```
 
 ### Fix

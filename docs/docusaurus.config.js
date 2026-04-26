@@ -22,6 +22,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/muthub-ai/c4-skills/tree/main/docs/',
         },
@@ -41,8 +42,8 @@ const config = {
         logo: { alt: 'c4-skills', src: 'img/logo.svg' },
         items: [
           { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: 'Docs' },
-          { to: '/docs/examples/banking-system', label: 'Examples', position: 'left' },
-          { to: '/docs/troubleshooting/mermaid-errors', label: 'Troubleshooting', position: 'left' },
+          { to: '/examples/banking-system', label: 'Examples', position: 'left' },
+          { to: '/troubleshooting/mermaid-errors', label: 'Troubleshooting', position: 'left' },
           { href: 'https://github.com/muthub-ai/c4-skills', label: 'GitHub', position: 'right' },
         ],
       },
@@ -52,22 +53,22 @@ const config = {
           {
             title: 'Getting Started',
             items: [
-              { label: 'Installation', to: '/docs/getting-started/installation' },
-              { label: 'First Diagram', to: '/docs/getting-started/first-diagram' },
+              { label: 'Installation', to: '/getting-started/installation' },
+              { label: 'First Diagram', to: '/getting-started/first-diagram' },
             ],
           },
           {
             title: 'Skills',
             items: [
-              { label: 'c4designer', to: '/docs/skills/c4designer' },
-              { label: 'adr-scribe', to: '/docs/skills/adr-scribe' },
+              { label: 'c4designer', to: '/skills/c4designer' },
+              { label: 'adr-scribe', to: '/skills/adr-scribe' },
             ],
           },
           {
             title: 'Reference',
             items: [
-              { label: 'Mermaid C4 Syntax', to: '/docs/reference/mermaid-c4-syntax' },
-              { label: 'Troubleshooting', to: '/docs/troubleshooting/mermaid-errors' },
+              { label: 'Mermaid C4 Syntax', to: '/reference/mermaid-c4-syntax' },
+              { label: 'Troubleshooting', to: '/troubleshooting/mermaid-errors' },
               { label: 'CHANGELOG', href: 'https://github.com/muthub-ai/c4-skills/blob/main/CHANGELOG.md' },
             ],
           },
