@@ -32,7 +32,7 @@ C4Container
     Rel(customer, web_app, "Visits bigbank.com using", "HTTPS")
     Rel(customer, spa, "Views account balances, makes payments using")
     Rel(customer, mobile, "Views account balances, makes payments using")
-    Rel(web_app, spa, "Delivers to the customer's web browser")
+    Rel(web_app, spa, "Delivers to the customer's web browser", "HTTPS")
     Rel(spa, api, "Makes API calls to", "JSON/HTTPS")
     Rel(mobile, api, "Makes API calls to", "JSON/HTTPS")
     Rel(api, db, "Reads from and writes to", "JDBC")

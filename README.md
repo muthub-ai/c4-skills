@@ -16,14 +16,9 @@
 
 ## 💡 What is this? (And why should I care?)
 
-### For the Non-Technical Audience 🏢
-Have you ever looked at a massive folder of code and wondered, *"How does all this actually work together?"* 
-Software Architecture diagrams are maps for code. They help product managers, stakeholders, and business leaders understand how systems interact without needing to read a single line of programming logic. 
+AI Coding agents are exceptionally good at writing code, but they often struggle to design and document software architectures consistently. This repository provides universal, agent-agnostic "Skills" (sets of strict rules, workflows, and checklists) that teach your AI assistant how to act as an expert Software Architect. 
 
-This tool teaches AI assistants how to automatically draw those beautiful, easy-to-read maps (called **C4 Diagrams**) directly from your code, and documents **why** certain decisions were made using **Architecture Decision Records (ADRs)**!
-
-### For the Technical Audience 💻
-AI Coding agents are exceptionally good at writing code, but they often struggle to design and document software architectures consistently. This repository provides universal, agent-agnostic "Skills" (sets of strict rules, workflows, and checklists) that force your agent to follow best practices when producing documentation.
+By using these skills, your agent will automatically generate beautiful, easy-to-read **C4 Diagrams** (the "what") directly from your codebase, and systematically document **why** certain decisions were made using standard **Architecture Decision Records (ADRs)**.
 
 ---
 
@@ -50,7 +45,7 @@ C4Container
         Container(api, "API Application", "Node.js", "Provides banking functionality via API.")
         ContainerDb(db, "Database", "PostgreSQL", "Stores user data.")
     }
-    Rel(customer, spa, "Uses", "HTTPS")
+    Rel(customer, spa, "Views account balances and makes payments using", "HTTPS")
     Rel(spa, api, "Makes API calls to", "JSON/HTTPS")
     Rel(api, db, "Reads from and writes to", "JDBC")
 ```

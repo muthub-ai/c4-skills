@@ -44,14 +44,14 @@ fi
 # Extract and check elements for type and technology
 if grep -Eq 'C4Container|C4Component' "$FILE"; then
     while read -r line; do
-        if [[ "$line" =~ ^[[:space:]]*Container(|Db|Queue)\( ]]; then
+        if [[ "$line" =~ ^[[:space:]]*(Container|ContainerDb|ContainerQueue)\( ]]; then
             commas=$(echo "$line" | tr -cd ',' | wc -c)
             if [ "$commas" -lt 3 ]; then
                 echo "❌ Found Container missing technology parameter: $line"
                 exit 1
             fi
         fi
-        if [[ "$line" =~ ^[[:space:]]*Rel(|_U|_D|_L|_R)\( ]]; then
+        if [[ "$line" =~ ^[[:space:]]*(Rel|Rel_U|Rel_D|Rel_L|Rel_R)\( ]]; then
             commas=$(echo "$line" | tr -cd ',' | wc -c)
             if [ "$commas" -lt 3 ]; then
                 echo "❌ Found Rel statement missing protocol parameter: $line"
