@@ -220,6 +220,37 @@ else
 fi
 
 # =============================================================================
+# SUITE 4: Registry Completeness
+# =============================================================================
+section "SUITE 4: Registry Completeness"
+
+REGISTRY="../registry.json"
+echo ""
+if [ ! -f "$REGISTRY" ]; then
+    fail "[4.1] registry.json not found at root — required for machine-readable skill discovery"
+else
+    pass "[4.1] registry.json exists"
+    REGISTRY_COUNT=0
+    for SKILL_DIR in ../*/SKILL.md; do
+        SKILL_NAME=$(basename "$(dirname "$SKILL_DIR")")
+        REGISTRY_COUNT=$((REGISTRY_COUNT + 1))
+        if grep -q "\"id\": \"$SKILL_NAME\"" "$REGISTRY"; then
+            pass "[4.$REGISTRY_COUNT] Skill '$SKILL_NAME' is registered in registry.json"
+        else
+            fail "[4.$REGISTRY_COUNT] Skill '$SKILL_NAME' is NOT in registry.json — update registry.json when adding a skill"
+        fi
+    done
+    # Check registry version matches framework version
+    REG_VERSION=$(grep '"version"' "$REGISTRY" | head -1 | sed -E 's/.*"version": "([^"]+)".*/\1/')
+    SKILL_VERSION=$(grep "^version:" ../c4designer/SKILL.md | head -1 | cut -d' ' -f2-)
+    if [ "$REG_VERSION" = "$SKILL_VERSION" ]; then
+        pass "[4.R] registry.json version ($REG_VERSION) matches framework version ($SKILL_VERSION)"
+    else
+        fail "[4.R] registry.json version ($REG_VERSION) does not match framework version ($SKILL_VERSION) — keep them in sync"
+    fi
+fi
+
+# =============================================================================
 # Test Summary
 # =============================================================================
 SUITE_END=$(date +%s)
