@@ -41,6 +41,12 @@ if grep -Eq 'Rel\(.*,.*, *"(Uses|Calls|Reads)"' "$FILE"; then
     exit 1
 fi
 
+# Check for invalid boundary syntax (appending { to a System or Container)
+if grep -Eq '^[[:space:]]*(System|SystemDb|SystemQueue|Container|ContainerDb|ContainerQueue)\(.*[[:space:]]*\{' "$FILE"; then
+    echo "❌ Found invalid boundary syntax. You cannot append '{' to a System or Container. You must use System_Boundary or Container_Boundary."
+    exit 1
+fi
+
 # Extract and check elements for type and technology
 if grep -Eq 'C4Container|C4Component' "$FILE"; then
     while read -r line; do
