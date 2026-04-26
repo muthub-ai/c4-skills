@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [1.2.0] — 2026-04-26
 
-> Changes on `feat-updatec4` branch, pending merge to `main`.
+> The Enterprise Framework Update
 
 ### 🚀 Added
 - **`adr-scribe` Mode Files**: Decomposed the monolithic skill into three dedicated workflow files — `mode-interview.md`, `mode-retro-document.md`, and `mode-review.md` — each with phased, structured dialogue matching the depth of `c4designer`.

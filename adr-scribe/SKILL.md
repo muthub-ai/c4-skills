@@ -1,6 +1,6 @@
 ---
 name: adr-scribe
-version: 1.0.0
+version: 1.2.0
 requires: ["c4-model >= 1.0.0"]
 compatible_agents: ["copilot", "claude-code", "cursor", "devin", "windsurf"]
 description: Interactively draft, retro-document, and review Architecture Decision Records (ADRs). The skill detects the usage mode (interview for a new decision, retro-documenting from a PR or code, or reviewing an existing ADR) and enforces the use of the Michael Nygard MADR template. Output format is Markdown. Destination is negotiated (default local filesystem in docs/adr/).
